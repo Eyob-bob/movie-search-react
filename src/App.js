@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import MovieCard from "./MovieCard";
 import SearchIcon from "./search.svg";
 
 const App = () => {
-  const [movies, setMovies] = useState();
-  const [searchTerm, setSearchTerm] = useState();
+  const [movies, setMovies] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const API_URL = "https://www.omdbapi.com?apikey=1d29bd10";
 
@@ -14,10 +14,6 @@ const App = () => {
     const data = await response.json();
     setMovies(data.Search);
   };
-
-  useEffect(() => {
-    searchMovies(searchMovies);
-  }, [movies]);
 
   return (
     <div className="app">
@@ -40,7 +36,7 @@ const App = () => {
       </div>
 
       <div className="container">
-        {movies?.length > 0 ? (
+        {movies.length > 0 ? (
           movies.map((movie) => <MovieCard key={movie.imdbID} movie={movie} />)
         ) : (
           <div className="empty">
