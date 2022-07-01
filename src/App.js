@@ -41,13 +41,12 @@ const App = () => {
 
       <div className="container">
         {movies?.length > 0 ? (
-          movies.map((movie) => <MovieCard key={movie.mdbid} movie={movie} />)
+          movies.map((movie) => <MovieCard key={movie.imdbID} movie={movie} />)
         ) : (
           <div className="empty">
             <h2>There are no movies available</h2>
           </div>
         )}
-        {console.log(movies)}
       </div>
     </div>
   );
