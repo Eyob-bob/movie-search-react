@@ -31,6 +31,7 @@ const App = () => {
           alt="search"
           onClick={() => {
             searchMovies(searchTerm);
+            setSearchTerm("");
           }}
         />
       </div>
