@@ -1,10 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
+const MovieCard = ({ movie }) => {
+  const navigate = useNavigate();
 
-
-const MovieCard = ({movie}) => {
   return (
-    <div className="movie">
+    <div
+      className="movie"
+      onClick={() => {
+        navigate(`/${movie.imdbID}`);
+      }}
+    >
       <div>
         <p>{movie.Year}</p>
       </div>

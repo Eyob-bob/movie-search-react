@@ -1,0 +1,42 @@
+.single-movie {
+  display: grid;
+  place-content: center;
+}
+
+.single-movie h1 {
+  padding: 1rem;
+}
+
+.section-center {
+  width: 80%;
+  max-width: 80vw;
+  margin: 1rem auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.section-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+a.link,
+a.link:visited {
+  margin: 0 4rem;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  background-color: rgb(5, 5, 129);
+  max-width: 100px;
+  display: grid;
+  place-content: center;
+  border-radius: 10px;
+  color: whitesmoke;
+}
+
+@media (max-width: 950px) {
+  .section-center {
+    flex-direction: column;
+  }
+}
