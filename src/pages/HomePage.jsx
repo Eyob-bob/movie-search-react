@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import MovieCard from "../components/MovieCard";
 import SearchIcon from "../assets/search.svg";
 

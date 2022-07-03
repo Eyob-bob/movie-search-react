@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 
 const MovieDetailsPage = () => {
   const { detailID } = useParams();
@@ -16,6 +16,10 @@ const MovieDetailsPage = () => {
   useEffect(() => {
     fetchMovie(detailID);
   });
+
+  if (movie.Error) {
+    return <Navigate to={`/error/${detailID}`} />;
+  }
 
   return (
     <section className="single-movie">
